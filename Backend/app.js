@@ -10,7 +10,9 @@ const { login } = require("./routes/auth");
 const { getCars } = require("./routes/getCars");
 
 dotenv.config();
-app.get("/api/login", login);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.post("/api/login", login);
 app.get("/api/getcars", getCars);
 
 app.get("*.*", express.static(frontend));

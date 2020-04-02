@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-const sql = require("mssql2");
+const sql = require("mssql");
 dotenv.config();
 
 const dbconfig = {

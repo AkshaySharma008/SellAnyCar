@@ -10,7 +10,7 @@ module.exports = {
         console.log(result);
         res.send({
           success: true,
-          result: result
+          result: result.recordset
         });
       });
     } catch (err) {
