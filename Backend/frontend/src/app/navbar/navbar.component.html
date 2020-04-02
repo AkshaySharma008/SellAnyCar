@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Welcome {{ name }}</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -13,22 +13,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"
-          >Menu <span class="sr-only">(current)</span></a
-        >
-      </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li> -->
-    </ul>
+    <ul class="navbar-nav mr-auto"></ul>
     <form class="form-inline my-2 my-lg-0">
       <button class="btn btn-secondary my-2 my-sm-0" (click)="logout()">
         Log Out

@@ -20,8 +20,10 @@ export class AdminLoginComponent implements OnInit {
       if (res['token']) {
         const token = res['token'];
         const email = res['email'];
+        const name = res['name'];
         localStorage.setItem("token", token);
         localStorage.setItem("email", email);
+        localStorage.setItem("name", name);
         this.router.navigateByUrl("/");
       }
       else {

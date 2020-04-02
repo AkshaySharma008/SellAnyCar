@@ -20,7 +20,8 @@ module.exports = {
           res.send({
             success: true,
             token,
-            email
+            email,
+            name: result.recordset[0].name
           });
         }
       });
