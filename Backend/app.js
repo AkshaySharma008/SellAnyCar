@@ -8,11 +8,13 @@ var multer = require("multer");
 const frontend = "./frontend/dist/frontend";
 const { login } = require("./routes/auth");
 const { getCars } = require("./routes/getCars");
+const { signup } = require("./routes/signup");
 
 dotenv.config();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.post("/api/login", login);
+app.post("/api/signup", signup);
 app.get("/api/getcars", getCars);
 
 app.get("*.*", express.static(frontend));

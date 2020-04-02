@@ -23,7 +23,6 @@ export class AdminLoginComponent implements OnInit {
         localStorage.setItem("token", token);
         localStorage.setItem("email", email);
         this.router.navigateByUrl("/");
-
       }
       else {
         alert("Login Failed!!");
