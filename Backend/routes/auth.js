@@ -2,7 +2,7 @@ const sqlstring = require("sqlstring");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
-  getAll: (req, res) => {
+  login: (req, res) => {
     let username = req.params.username;
     let query = `select email from login where name = ${sqlstring.escape(
       username
