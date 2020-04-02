@@ -6,11 +6,15 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 var multer = require("multer");
 const frontend = "./frontend/dist/frontend";
-const { getAll } = require("./routes/auth");
+const { login } = require("./routes/auth");
 const { getCars } = require("./routes/getCars");
+const { signup } = require("./routes/signup");
 
 dotenv.config();
-app.get("/api/getall/:username", getAll);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.post("/api/login", login);
+app.post("/api/signup", signup);
 app.get("/api/getcars", getCars);
 
 app.get("*.*", express.static(frontend));

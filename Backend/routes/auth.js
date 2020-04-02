@@ -2,23 +2,31 @@ const sqlstring = require("sqlstring");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
-  getAll: (req, res) => {
-    let username = req.params.username;
-    let query = `select email from login where name = ${sqlstring.escape(
-      username
-    )}`;
+  login: (req, res) => {
+    console.log(req.body);
+    let email = req.body.email;
+    let password = req.body.password;
+    let query = `select * from login where email = ${sqlstring.escape(email)} and password=${sqlstring.escape(password)};`;
     try {
       db.query(query, (err, result) => {
-        if (err) throw err;
         console.log(result);
-        res.send({
-          success: true,
-          result: result
-        });
+        if (err) throw err;
+        if (result.rowsAffected[0] == 0) {
+          res.send({
+            success: false
+          });
+        } else {
+          let token = jwt.sign({ email }, process.env.secretKey);
+          res.send({
+            success: true,
+            token,
+            email
+          });
+        }
       });
     } catch (err) {
       console.log(err);
-      res.status(404).send({
+      res.send({
         success: false
       });
     }

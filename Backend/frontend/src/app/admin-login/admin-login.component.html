@@ -1,0 +1,24 @@
+<div class="container">
+    <form style="width: 50%;margin-left: 20%;margin-top: 5%;border: 1px solid black;padding: 5%;" #loginForm="ngForm"
+        (ngSubmit)="login(loginForm)" ngNativeValidate>
+        <fieldset>
+            <legend>User Login</legend>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email" name="email" [(ngModel)]="email" required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                    name="password" [(ngModel)]="password" required>
+            </div>
+            <button *ngIf="!loading" type="submit" class="btn btn-primary form-control">Login</button>
+            <button *ngIf="loading" class="btn btn-primary form-control" disabled>Logging...</button>
+
+        </fieldset>
+    </form>
+</div>
