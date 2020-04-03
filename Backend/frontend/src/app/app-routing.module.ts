@@ -5,12 +5,14 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AuthGuard } from './auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { UploadComponent } from './upload/upload.component';
+import { PaymentTestComponent } from './payment-test/payment-test.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "login", component: AdminLoginComponent },
   { path: "signup", component: SignupComponent },
   { path: "upload", component: UploadComponent },
+  { path: "payment", component: PaymentTestComponent },
   { path: "**", component: AdminLoginComponent }
 ];
 
