@@ -6,18 +6,21 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./payment-test.component.css"]
 })
 export class PaymentTestComponent implements OnInit {
-  constructor() {}
+  constructor() { }
+  public total;
 
   handler: any = null;
   ngOnInit() {
     this.loadStripe();
+    this.total = sessionStorage.getItem("total");
+    console.log(this.total);
   }
 
   pay(amount) {
     var handler = (<any>window).StripeCheckout.configure({
       key: "pk_test_aeUUjYYcx4XNfKVW60pmHTtI",
       locale: "auto",
-      token: function(token: any) {
+      token: function (token: any) {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
         console.log(token);
@@ -42,7 +45,7 @@ export class PaymentTestComponent implements OnInit {
         this.handler = (<any>window).StripeCheckout.configure({
           key: "pk_test_aeUUjYYcx4XNfKVW60pmHTtI",
           locale: "auto",
-          token: function(token: any) {
+          token: function (token: any) {
             // You can access the token ID with `token.id`.
             // Get the token ID to your server-side code for use.
             console.log(token);

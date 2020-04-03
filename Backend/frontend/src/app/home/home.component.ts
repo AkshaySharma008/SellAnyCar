@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     public http: HttpClient,
     public router: Router,
     private _sanitizer: DomSanitizer
-  ) {}
+  ) { }
   public cars = [];
   public cart = [];
   getAllCars() {
@@ -26,14 +26,11 @@ export class HomeComponent implements OnInit {
     });
   }
   add(name: any, price: any, model: any) {
-    console.log(name, price, model);
     this.cart.push({ name: name, price: price, model: model });
-    console.log(this.cart);
   }
 
   addToCart() {
     sessionStorage.setItem("cart", JSON.stringify(this.cart));
-    console.log(sessionStorage.getItem("cart"));
     this.router.navigateByUrl("/cart");
   }
 

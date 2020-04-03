@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   { path: "cart", component: CartComponent, canActivate: [AuthGuard] },
   { path: "upload", component: UploadComponent },
-  { path: "payment", component: PaymentTestComponent },
+  { path: "payment", component: PaymentTestComponent, canActivate: [AuthGuard] },
   { path: "**", component: AdminLoginComponent }
 ];
 
@@ -22,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
