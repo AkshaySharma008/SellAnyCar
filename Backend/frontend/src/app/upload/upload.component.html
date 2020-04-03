@@ -1,63 +1,34 @@
 <div class="container">
-  <form
-    #uploadForm="ngForm"
-    (ngSubmit)="upload(uploadForm)"
-    ngNativeValidate
-    enctype="multipart/form-data"
-  >
-    <fieldset>
-      <legend>Upload Car</legend>
+    <form #uploadForm="ngForm" (ngSubmit)="upload(uploadForm)" ngNativeValidate enctype="multipart/form-data">
+        <fieldset>
+            <legend>Upload Car</legend>
 
-      <div class="form-group">
-        <label for="carName">Car Name</label>
-        <input
-          id="carName"
-          type="text"
-          class="form-control"
-          name="carName"
-          [(ngModel)]="carName"
-          placeholder="Enter Car Name Here"
-          required
-        />
-      </div>
+            <div class="form-group">
+                <label for="carName">Car Name</label>
+                <input id="carName" type="text" class="form-control" name="carName" [(ngModel)]="carName"
+                    placeholder="Enter Car Name Here" required />
+            </div>
 
-      <div class="form-group">
-        <label for="carModel">Car Model</label>
-        <input
-          type="text"
-          class="form-control"
-          name="carModel"
-          [(ngModel)]="carModel"
-          placeholder="Enter Car Model Here"
-        />
-      </div>
+            <div class="form-group">
+                <label for="carModel">Car Model</label>
+                <input type="text" class="form-control" name="carModel" [(ngModel)]="carModel"
+                    placeholder="Enter Car Model Here" />
+            </div>
 
-      <div class="form-group">
-        <label for="carPrice">Car Price</label>
-        <input
-          type="text"
-          class="form-control"
-          name="carPrice"
-          [(ngModel)]="carPrice"
-          placeholder="Enter Car Price Here"
-        />
-      </div>
+            <div class="form-group">
+                <label for="carPrice">Car Price</label>
+                <input type="text" class="form-control" name="carPrice" [(ngModel)]="carPrice"
+                    placeholder="Enter Car Price Here" />
+            </div>
 
-      <div class="form-group">
-        <label for="image">Upload image Here.</label>
-        <input
-          type="file"
-          class="form-control-file"
-          name="image"
-          [(ngModel)]="image"
-          (change)="selectedImage($event)"
-        />
-      </div>
+            <div class="form-group">
+                <label for="image">Upload image Here.</label>
+                <input type="file" class="form-control-file" name="image" [(ngModel)]="image"
+                    (change)="selectedImage($event)" />
+            </div>
 
-      <button type="submit" class="btn btn-primary form-control">Submit</button
-      ><br /><br />
-      <button type="reset" class="btn btn-danger form-control">Reset</button
-      ><br /><br />
-    </fieldset>
-  </form>
+            <button type="submit" class="btn btn-primary form-control">Submit</button><br /><br />
+            <button type="reset" class="btn btn-danger form-control">Reset</button><br /><br />
+        </fieldset>
+    </form>
 </div>
