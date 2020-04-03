@@ -7,15 +7,26 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { HomeComponent } from "./home/home.component";
 
 import { HttpClientModule } from "@angular/common/http";
-import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { FormsModule } from '@angular/forms';
-import { SignupComponent } from './signup/signup.component';
-import { CartComponent } from './cart/cart.component';
+import { AdminLoginComponent } from "./admin-login/admin-login.component";
+import { FormsModule } from "@angular/forms";
+import { SignupComponent } from "./signup/signup.component";
+import { CartComponent } from "./cart/cart.component";
+import { UploadComponent } from "./upload/upload.component";
+import { PaymentTestComponent } from "./payment-test/payment-test.component";
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, AdminLoginComponent, SignupComponent, CartComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    AdminLoginComponent,
+    SignupComponent,
+    CartComponent,
+    UploadComponent,
+    PaymentTestComponent
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

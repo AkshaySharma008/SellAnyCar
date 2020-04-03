@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: "app-home",
@@ -8,12 +9,19 @@ import { Router } from "@angular/router";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-  constructor(public http: HttpClient, public router: Router) {}
+  constructor(
+    public http: HttpClient,
+    public router: Router,
+    private _sanitizer: DomSanitizer
+  ) {}
   public cars = [];
   public cart = [];
   getAllCars() {
     this.http.get("/api/getcars").subscribe(res => {
       console.log(res["result"]);
+      res["result"]["image"] = this._sanitizer.bypassSecurityTrustResourceUrl(
+        "data:image/jpeg;base64," + res["result"]["image"]
+      );
       this.cars = res["result"];
     });
   }
