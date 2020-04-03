@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <div class="row">
-    <div class="card mb-3 col-md-6" *ngFor="let car of cars">
+  <div class="row" style="margin-top: 2%;">
+    <div class="card mb-4 col-md-6" *ngFor="let car of cars">
       <h3 class="card-header">{{ car.name }}</h3>
       <div class="card-body">
         <h5 class="card-title">{{ car.model }}</h5>
@@ -15,11 +15,14 @@
       <div class="card-body">
         <span style="margin-left: 0px;">Price: {{ car.price }}</span>
         <button
-          (click)="add(car.name)"
+          (click)="add(car.name, car.price, car.model)"
           class="btn btn-primary"
-          style="margin-left:60%;"
+          style="margin-left:20%;"
         >
-          Add To Cart
+          Add To Cart</button
+        >&nbsp;
+        <button (click)="addToCart()" class="btn btn-primary">
+          Go To Cart
         </button>
       </div>
     </div>

@@ -1,25 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: "app-navbar",
+  templateUrl: "./navbar.component.html",
+  styleUrls: ["./navbar.component.css"]
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(public router: Router) { }
+  constructor(public router: Router) {}
 
   public name;
 
   ngOnInit() {
-    this.name = localStorage.getItem('name');
+    this.name = localStorage.getItem("name");
   }
 
   logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('email');
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
     this.router.navigateByUrl("/login");
   }
-
 }

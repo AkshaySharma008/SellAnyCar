@@ -10,9 +10,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, AdminLoginComponent, SignupComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, AdminLoginComponent, SignupComponent, CartComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
