@@ -7,10 +7,10 @@ module.exports = {
     try {
       db.query(query, async (err, result) => {
         if (err) throw err;
-        for (let i = 0; i < result.rowsAffected[0]; i++) {
-          result.recordset[i].image = await base64_encode(result.recordset[i].image);
-          result.recordset[i].image = `'${result.recordset[i].image}'`;
-        }
+        // for (let i = 0; i < result.rowsAffected[0]; i++) {
+        //   result.recordset[i].image = await base64_encode(result.recordset[i].image);
+        //   result.recordset[i].image = `'${result.recordset[i].image}'`;
+        // }
         //console.log(result);
         res.send({
           success: true,

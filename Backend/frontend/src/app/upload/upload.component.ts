@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UploadComponent implements OnInit {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public router: Router) { }
 
   ngOnInit() {
   }
@@ -32,6 +33,10 @@ export class UploadComponent implements OnInit {
     formData.append('price', Data.value.carPrice);
     formData.append('image', this.images);
     this.http.post("/api/upload", formData).subscribe(res => {
+      if (res['success'])
+        this.router.navigateByUrl("");
+      else
+        alert("Server Error!")
       console.log(res);
     })
   }

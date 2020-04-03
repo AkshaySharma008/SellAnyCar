@@ -10,7 +10,21 @@ const { signup } = require("./routes/signup");
 const { upload } = require("./routes/upload");
 
 var multer = require('multer')
-var uploadImage = multer({ dest: './uploads' })
+const PATH = './uploads';
+
+let storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, PATH);
+  },
+  filename: (req, file, cb) => {
+
+    cb(null, file.fieldname + '-' + Date.now() + '.jpeg');
+  }
+});
+
+let uploadImage = multer({
+  storage: storage
+});
 
 dotenv.config();
 app.use(bodyParser.urlencoded({ extended: false }));
