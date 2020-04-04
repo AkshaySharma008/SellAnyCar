@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./navbar.component.css"]
 })
 export class NavbarComponent implements OnInit {
-  constructor(public router: Router) {}
+  constructor(public router: Router) { }
 
   public name;
 
@@ -16,8 +16,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("email");
+    localStorage.clear();
+    sessionStorage.clear();
     this.router.navigateByUrl("/login");
   }
 }

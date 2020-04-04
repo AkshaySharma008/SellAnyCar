@@ -13,6 +13,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { CartComponent } from "./cart/cart.component";
 import { UploadComponent } from "./upload/upload.component";
 import { PaymentTestComponent } from "./payment-test/payment-test.component";
+import { PrevOrdersComponent } from './prev-orders/prev-orders.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PaymentTestComponent } from "./payment-test/payment-test.component";
     SignupComponent,
     CartComponent,
     UploadComponent,
-    PaymentTestComponent
+    PaymentTestComponent,
+    PrevOrdersComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [HttpClientModule],

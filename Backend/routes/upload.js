@@ -3,12 +3,16 @@ const sqlstring = require("sqlstring");
 module.exports = {
   upload: (req, res) => {
     let image = req.file.path;
-    image = "./assets/images/" + image;
+    console.log(req.file.path);
+    let str = '';
+    str += image;
+    str = str.replace('finalBuild/', '');
+    console.log(str);
     let query = `insert into cars (name,model,price,image) values (${sqlstring.escape(
       req.body.name
     )},${sqlstring.escape(req.body.model)},${sqlstring.escape(
       req.body.price
-    )},${sqlstring.escape(image)});`;
+    )},${sqlstring.escape(str)});`;
     try {
       db.query(query, (err, result) => {
         if (err) throw err;

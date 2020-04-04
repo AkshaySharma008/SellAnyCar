@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     public http: HttpClient,
     public router: Router,
     private _sanitizer: DomSanitizer
-  ) { }
+  ) {}
   public cars = [];
   public cart = [];
   getAllCars() {

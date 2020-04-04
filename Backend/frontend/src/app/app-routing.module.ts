@@ -7,6 +7,7 @@ import { AuthGuard } from "./auth.guard";
 import { SignupComponent } from "./signup/signup.component";
 import { UploadComponent } from "./upload/upload.component";
 import { PaymentTestComponent } from "./payment-test/payment-test.component";
+import { PrevOrdersComponent } from './prev-orders/prev-orders.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, canActivate: [AuthGuard] },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "cart", component: CartComponent, canActivate: [AuthGuard] },
   { path: "upload", component: UploadComponent },
   { path: "payment", component: PaymentTestComponent, canActivate: [AuthGuard] },
+  { path: "orders", component: PrevOrdersComponent, canActivate: [AuthGuard] },
   { path: "**", component: AdminLoginComponent }
 ];
 

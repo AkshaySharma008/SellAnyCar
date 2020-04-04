@@ -3,15 +3,16 @@ require("./config/db");
 const app = express();
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-const frontend = "./frontend/dist/frontend";
+const frontend = "./finalBuild";
 const { login } = require("./routes/auth");
 const { getCars } = require("./routes/getCars");
 const { signup } = require("./routes/signup");
 const { upload } = require("./routes/upload");
 const { payment } = require("./routes/payment");
+const { getOrders } = require("./routes/orders");
 
 var multer = require('multer')
-const PATH = './uploads';
+const PATH = './finalBuild/assets/images';
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -35,6 +36,7 @@ app.post("/api/signup", signup);
 app.get("/api/getcars", getCars);
 app.post("/api/upload", uploadImage.single('image'), upload);
 app.post("/api/payment", payment);
+app.post("/api/getOrders", getOrders);
 
 
 app.get("*.*", express.static(frontend));
