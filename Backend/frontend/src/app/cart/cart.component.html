@@ -10,9 +10,9 @@
           <th scope="col">Price</th>
         </tr>
       </thead>
-      <tbody *ngFor="let item of shopCart">
+      <tbody *ngFor="let item of shopCart;let i = index">
         <tr class="table-active">
-          <th scope="row">Active</th>
+          <th scope="row">{{i+1}}</th>
           <td>{{ item.name }}</td>
           <td>{{ item.model }}</td>
           <td>{{ item.price }}</td>
@@ -21,7 +21,7 @@
     </table>
     <div class="col-md-12">
       <div>
-        <h4 style="float: left;">Total:{{total}}</h4>
+        <h4 style="float: left;">Total: ${{total}}</h4>
         <a routerLink="/payment">
           <button class="btn btn-secondary my-2 my-sm-0" style="float: right;">
             Proceed to Pay

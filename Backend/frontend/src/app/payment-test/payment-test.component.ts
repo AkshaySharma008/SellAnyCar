@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./payment-test.component.css"]
 })
 export class PaymentTestComponent implements OnInit {
-  constructor() { }
+  constructor() {}
   public total;
 
   handler: any = null;
@@ -20,7 +20,7 @@ export class PaymentTestComponent implements OnInit {
     var handler = (<any>window).StripeCheckout.configure({
       key: "pk_test_aeUUjYYcx4XNfKVW60pmHTtI",
       locale: "auto",
-      token: function (token: any) {
+      token: function(token: any) {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
         console.log(token);
@@ -29,8 +29,8 @@ export class PaymentTestComponent implements OnInit {
     });
 
     handler.open({
-      name: "Demo Site",
-      description: "2 widgets",
+      name: "SellAnyCar",
+      description: "demy payment",
       amount: amount * 100
     });
   }
@@ -45,7 +45,7 @@ export class PaymentTestComponent implements OnInit {
         this.handler = (<any>window).StripeCheckout.configure({
           key: "pk_test_aeUUjYYcx4XNfKVW60pmHTtI",
           locale: "auto",
-          token: function (token: any) {
+          token: function(token: any) {
             // You can access the token ID with `token.id`.
             // Get the token ID to your server-side code for use.
             console.log(token);

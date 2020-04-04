@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./cart.component.css"]
 })
 export class CartComponent implements OnInit {
-  constructor() { }
+  constructor() {}
   public shopCart;
   public total: Number = 0;
   ngOnInit() {
@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
       this.shopCart = JSON.parse(this.shopCart);
       console.log(this.shopCart);
       for (let i = 0; i < this.shopCart.length; i++) {
-        this.total = +this.total + +this.shopCart[i]['price'];
+        this.total = +this.total + +this.shopCart[i]["price"];
       }
       console.log(this.total);
       sessionStorage.setItem("total", JSON.stringify(this.total));
