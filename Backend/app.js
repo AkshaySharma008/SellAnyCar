@@ -8,6 +8,7 @@ const { login } = require("./routes/auth");
 const { getCars } = require("./routes/getCars");
 const { signup } = require("./routes/signup");
 const { upload } = require("./routes/upload");
+const { payment } = require("./routes/payment");
 
 var multer = require('multer')
 const PATH = './uploads';
@@ -33,6 +34,7 @@ app.post("/api/login", login);
 app.post("/api/signup", signup);
 app.get("/api/getcars", getCars);
 app.post("/api/upload", uploadImage.single('image'), upload);
+app.post("/api/payment", payment);
 
 
 app.get("*.*", express.static(frontend));
